@@ -9,10 +9,10 @@ telescope.load_extension("media_files")
 
 telescope.setup({
 	defaults = {
-
+		path_display = { "absolute" },
+		show_line = false,
 		-- prompt_prefix = icons.ui.Telescope .. " ",
 		selection_caret = " ",
-		path_display = { "smart" },
 		file_ignore_patterns = {
 			".git/",
 			"target/",
@@ -147,6 +147,15 @@ telescope.setup({
 				["?"] = actions.which_key,
 			},
 		},
+		vimgrep_arguments = {
+			"rg",
+			"--color=never",
+			"--no-heading",
+			"--with-filename",
+			"--line-number",
+			"--column",
+			"--smart-case",
+		},
 	},
 	pickers = {
 
@@ -159,6 +168,7 @@ telescope.setup({
 		find_files = {
 			theme = "dropdown",
 			previewer = false,
+			wrap_results = true,
 		},
 		buffers = {
 			theme = "dropdown",
@@ -184,10 +194,12 @@ telescope.setup({
 		},
 		lsp_declarations = {
 			theme = "dropdown",
+			show_line = false,
 			initial_mode = "normal",
 		},
 		lsp_implementations = {
 			theme = "dropdown",
+			show_line = false,
 			initial_mode = "normal",
 		},
 

@@ -16,16 +16,15 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 	dap.configurations[language] = {
 		{
 			type = "pwa-node",
-			request = "launch",			
+			request = "launch",
 			name = "Launch file",
 			program = "${file}",
 			cwd = "${workspaceFolder}",
 			sourceMaps = true,
-            protocol = 'inspector',
-            console = 'integratedTerminal',
-			outFiles= {'${workspaceFolder}/dist/**/*.js'},
-			runtimeExecutable = "${workspaceFolder}/node_modules/.bin/ts-node", 
-			
+			protocol = "inspector",
+			console = "integratedTerminal",
+			resolveSourceMapLocations = { "${workspaceFolder}/dist/**/*.js", "${workspaceFolder}/**", "!**/node_modules/**" }, --[[ outFiles = { []${workspaceFolder}/dist/**/*.js" }, ]]
+			runtimeExecutable = "${workspaceFolder}/node_modules/.bin/ts-node",
 		},
 		{
 			type = "pwa-node",
@@ -33,7 +32,6 @@ for _, language in ipairs({ "typescript", "javascript" }) do
 			name = "Attach",
 			processId = require("dap.utils").pick_process,
 			cwd = "${workspaceFolder}",
-			
 		},
 	}
 end

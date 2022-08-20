@@ -76,13 +76,8 @@ return packer.startup(function(use)
 	use({ "hrsh7th/nvim-cmp" }) -- The completion plugin
 	use({ "hrsh7th/cmp-buffer" }) -- buffer completions
 	use({ "hrsh7th/cmp-path" }) -- path completions
-	use({ "saadparwaiz1/cmp_luasnip" }) -- snippet completions
 	use({ "hrsh7th/cmp-nvim-lsp" })
 	use({ "hrsh7th/cmp-nvim-lua" })
-
-	-- snippets
-	use({ "L3MON4D3/LuaSnip" }) --snippet engine
-	use({ "rafamadriz/friendly-snippets" }) -- a bunch of snippets to use
 
 	-- LSP
 	use({ "neovim/nvim-lspconfig" }) -- enable LSP
@@ -92,6 +87,9 @@ return packer.startup(function(use)
 	use({ "RRethy/vim-illuminate" })
 	use({ "simrat39/rust-tools.nvim" })
 	use({ "lvimuser/lsp-inlayhints.nvim" })
+
+	-- Snippet
+	use("L3MON4D3/LuaSnip") --snippet engine
 
 	-- Telescope
 	use({ "nvim-telescope/telescope.nvim" })
@@ -116,6 +114,7 @@ return packer.startup(function(use)
 	})
 
 	use({ "theHamsta/nvim-dap-virtual-text" })
+
 	-- Keybinding
 	use("folke/which-key.nvim")
 
