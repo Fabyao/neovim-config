@@ -14,7 +14,7 @@ bufferline.setup({
 			},
 		},
 		show_close_icon = false,
-		separator_style = "slant",
+		separator_style = "padded_slant", --"slant or padded_slant",
 		max_name_length = 200,
 	},
 })
